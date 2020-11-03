@@ -12,13 +12,21 @@
           timeDimensions,
           setTimeDimensions,
           availableTimeDimensions,
-          availableFilters,
           filters,
           setFilters,
           }"
       >
         <v-container fluid class="pa-4 pa-md-8 pt-6 background-white">
           <div class="wrap">
+            <v-btn
+  color="primary"
+  depressed
+  elevation="2"
+  raised
+  loading
+  v-on:click="print"
+>Click Me!</v-btn>
+
             <v-row>
               <v-col cols="12" md="2" >
                 <v-select
@@ -147,6 +155,9 @@ export default {
     }
   },
   methods: {
+    print() {
+      console.log('clicked!')
+    },
     series (resultSet) {
       const seriesNames = resultSet.seriesNames()
       const pivot = resultSet.chartPivot()

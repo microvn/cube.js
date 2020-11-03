@@ -7,6 +7,7 @@
         hide-details
         v-model="select"
         :items="[...measures, ...dimensions]"
+        @change="print"
       />
     </v-col>
     <v-col cols="12" md="2"  v-if="select">
@@ -111,7 +112,15 @@
       ],
       showFilters: false,
     }),
+    watch: {
+      select: (current, prev) => {
+        console.log('?', current, prev);
+      }
+    },
     methods: {
+      print(prop) {
+        console.log('has changed', prop)
+      },
       save() {
         if (!this.showFilters) {
           this.showFilters = true;

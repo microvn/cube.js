@@ -3,7 +3,7 @@ export const DEFAULT_GRANULARITY = 'day';
 export function defaultOrder(query) {
   const granularity = (query.timeDimensions || []).find((d) => d.granularity);
 
-  if (granularity) {
+  if (granularity && granularity.dimension) {
     return {
       [granularity.dimension]: 'asc'
     };
