@@ -458,13 +458,16 @@ class PreAggregationLoader {
   refresh(newVersionEntry, invalidationKeys) {
     return (client) => {
       let refreshStrategy = this.refreshImplStoreInSourceStrategy;
+
       if (this.preAggregation.external) {
         const readOnly =
           client.config && client.config.readOnly ||
           client.readOnly && (typeof client.readOnly === 'boolean' ? client.readOnly : client.readOnly());
+
         refreshStrategy = readOnly ?
           this.refreshImplStreamExternalStrategy : this.refreshImplTempTableExternalStrategy;
       }
+
       return cancelCombinator(
         saveCancelFn => refreshStrategy.bind(this)(client, newVersionEntry, saveCancelFn, invalidationKeys)
       );
@@ -529,6 +532,7 @@ class PreAggregationLoader {
       params,
       this.queryOptions(invalidationKeys, query, params, targetTableName, newVersionEntry)
     ));
+
     const tableData = await this.downloadTempExternalPreAggregation(client, newVersionEntry, saveCancelFn);
     await this.uploadExternalPreAggregation(tableData, newVersionEntry, saveCancelFn);
     await this.loadCache.fetchTables(this.preAggregation);
@@ -547,11 +551,21 @@ class PreAggregationLoader {
       preAggregation: this.preAggregation,
       requestId: this.requestId
     });
+
     const tableData = await saveCancelFn(client.downloadQueryResults(
       sql,
       params,
       this.queryOptions(invalidationKeys, sql, params, this.targetTableName(newVersionEntry), newVersionEntry)
     ));
+    if (!tableData) {
+      this.logger('Database response empty, pre-aggregation will be skipped', {
+        preAggregation: this.preAggregation,
+        requestId: this.requestId
+      });
+
+      return;
+    }
+
     await this.uploadExternalPreAggregation(tableData, newVersionEntry, saveCancelFn);
     await this.loadCache.fetchTables(this.preAggregation);
   }
@@ -560,13 +574,16 @@ class PreAggregationLoader {
     if (!client.downloadTable) {
       throw new Error('Can\'t load external pre-aggregation: source driver doesn\'t support downloadTable()');
     }
+
     const table = this.targetTableName(newVersionEntry);
     this.logger('Downloading external pre-aggregation', {
       preAggregation: this.preAggregation,
       requestId: this.requestId
     });
+
     const tableData = await saveCancelFn(client.downloadTable(table));
     tableData.types = await saveCancelFn(client.tableColumnTypes(table));
+
     return tableData;
   }
 

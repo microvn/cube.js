@@ -118,12 +118,21 @@ export class BaseDriver {
     throw new Error('Not implemented');
   }
 
+  /**
+   * @return Promise<Array<any>>
+   * @param query
+   * @param values
+   */
   query(query, values) {
     throw new Error('Not implemented');
   }
 
   async downloadQueryResults(query, values) {
     const rows = await this.query(query, values);
+    if (rows.length === 0) {
+      return null;
+    }
+
     const fields = Object.keys(rows[0]);
 
     const types = fields.map(field => ({
