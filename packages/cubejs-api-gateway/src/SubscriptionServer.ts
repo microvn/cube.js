@@ -38,7 +38,7 @@ export class SubscriptionServer {
 
       if (message.authorization) {
         authContext = { isSubscription: true };
-        await this.apiGateway.checkAuthFn(authContext, message.authorization);
+        await this.apiGateway.checkAuthFn(authContext, message.authorization, 'bearer');
         await this.subscriptionStore.setAuthContext(connectionId, authContext);
         this.sendMessage(connectionId, { handshake: true });
         return;

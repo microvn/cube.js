@@ -36,7 +36,7 @@ You can provide the following configuration options to Cube.js.
   contextToAppId: (context: RequestContext) => String,
   contextToDataSourceId: (context: RequestContext) => String,
   repositoryFactory: (context: RequestContext) => SchemaFileRepository,
-  checkAuth: (req: ExpressRequest, authorization: String) => any,
+  checkAuth: (req: ExpressRequest, authorization: String|Undefined, schema: string) => any,
   checkAuthMiddleware: (req: ExpressRequest, res: ExpressResponse, next: ExpressMiddleware) => any,
   queryTransformer: (query: Object, context: RequestContext) => Object,
   preAggregationsSchema: String | (context: RequestContext) => String,
@@ -274,7 +274,7 @@ an example below.
 
 ```javascript
 module.exports = {
-  checkAuth: (req, auth) => {},
+  checkAuth: (req, auth, schema) => {},
 };
 ```
 

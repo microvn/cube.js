@@ -71,6 +71,6 @@ export type QueryTransformerFn = (query: Query, context: RequestContext) => Prom
 export type CheckAuthMiddlewareFn = (req: ExpressRequest, res: ExpressResponse, next: ExpressNextFunction) => void
 
 // @todo ctx can be passed from SubscriptionServer that will cause incapability with Express.Request
-export type CheckAuthFn = (ctx: any, authorization?: string) => any;
+export type CheckAuthFn = (ctx: any, authorization: string|undefined, schema: string) => any;
 
 export type ExtendContextFn = (req: ExpressRequest) => any;

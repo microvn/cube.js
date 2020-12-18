@@ -673,7 +673,11 @@ export class ApiGateway {
     }
   }
 
-  protected async defaultCheckAuth(req, auth) {
+  protected async defaultCheckAuth(req: Request, auth: string|undefined, schema: string) {
+    if (schema !== 'bearer') {
+      throw new UserError('Only Bearer schema is supported in Authorization header');
+    }
+
     if (auth) {
       const secret = this.apiSecret;
       try {
@@ -694,11 +698,24 @@ export class ApiGateway {
     }
   }
 
+  protected extractAuthorizationHeaderWithSchema(req: Request): [string|undefined, string] {
+    if (typeof req.headers.authorization === 'string') {
+      const parts = req.headers.authorization.split(' ', 2);
+      if (parts.length === 1) {
+        return [parts[0], 'bearer'];
+      }
+
+      return [parts[1], parts[0].toLowerCase()];
+    }
+
+    return [undefined, 'bearer'];
+  }
+
   protected checkAuth: RequestHandler = async (req, res, next) => {
-    const auth = req.headers.authorization;
+    const [token, schema] = this.extractAuthorizationHeaderWithSchema(req);
 
     try {
-      await this.checkAuthFn(req, auth);
+      await this.checkAuthFn(req, token, schema);
       if (next) {
         next();
       }
@@ -708,7 +725,8 @@ export class ApiGateway {
       } else {
         this.log(req, {
           type: 'Auth Error',
-          token: auth,
+          token,
+          schema,
           error: e.stack || e.toString()
         });
         res.status(500).json({ error: e.toString() });
