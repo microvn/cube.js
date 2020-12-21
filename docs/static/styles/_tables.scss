@@ -42,11 +42,10 @@ tbody > tr:not(:last-child), thead > tr {
 th {
   font-style: normal;
   font-weight: 500;
-  font-size: 13px;
-  line-height: 21px;
+  font-size: 0.8rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.04em;
   color: $dark-04;
-
-  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 

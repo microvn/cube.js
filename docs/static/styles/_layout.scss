@@ -318,11 +318,12 @@ a {
       }
 
       .mainTabLink {
+        font-family: $header-font;
+        font-weight: bold;
         line-height: 32px;
         font-size: 19px;
         letter-spacing: 0.02em;
         color: $brand-color;
-        font-weight: 500;
       }
 
       .mainTabText {
@@ -530,11 +531,11 @@ span.group-header {
         }
         .ant-menu-item-group-title {
           text-transform: uppercase;
-          font-size: 13px;
-          line-height: 21px;
-          letter-spacing: 1px;
+          font-size: 0.75rem;
+          line-height: 1.125rem;
+          letter-spacing: 0.04em;
           padding-left: 10px;
-          font-weight: bold;
+          font-weight: 500;
           color: $dark-04;
         }
       }
