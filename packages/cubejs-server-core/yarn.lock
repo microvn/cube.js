@@ -827,10 +827,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@cubejs-backend/api-gateway@^0.24.9":
-  version "0.24.9"
-  resolved "https://registry.yarnpkg.com/@cubejs-backend/api-gateway/-/api-gateway-0.24.9.tgz#966b3d4d4d595d22db83a494ac77cb5b3eaad866"
-  integrity sha512-bLSxJJfYjrxz6qxQDKW7VaUJ9ccclWzHdfzn2dL3l55u8b0hOaZRnuOZGiGg3ml/wgO5BIo8QO6uoZsXTm3dYg==
+"@cubejs-backend/api-gateway@^0.24.14":
+  version "0.24.14"
+  resolved "https://registry.yarnpkg.com/@cubejs-backend/api-gateway/-/api-gateway-0.24.14.tgz#2266fa7818393a911b828842cd8f2e9fc6c7c62d"
+  integrity sha512-KB8jnkk5/Fzl3sRJ4i8mHZoLvlAGQzNfXdnVLdiFMTXCZds99sGcgmMC64S6y0OXpJ5mntl4HNYcMojMRRmbeg==
   dependencies:
     "@hapi/joi" "^15.1.1"
     body-parser "^1.19.0"
@@ -842,20 +842,20 @@
     ramda "^0.27.0"
     uuid "^3.3.3"
 
-"@cubejs-backend/query-orchestrator@^0.24.9":
-  version "0.24.9"
-  resolved "https://registry.yarnpkg.com/@cubejs-backend/query-orchestrator/-/query-orchestrator-0.24.9.tgz#720a54dd55263fe2d654f6d4a4aad49194c05503"
-  integrity sha512-IKJNpbiRib1SJbQANoPY+KzK+SMROaWfyWDvelgDA/sRa9b7p7uKjCnlxuu8LPDVBqzzBWJHBvAskKTrMu09Hw==
+"@cubejs-backend/query-orchestrator@^0.24.13":
+  version "0.24.13"
+  resolved "https://registry.yarnpkg.com/@cubejs-backend/query-orchestrator/-/query-orchestrator-0.24.13.tgz#f903f9efc553ac8d71060fd42dc386d91740ea6c"
+  integrity sha512-nv2wT6yToquivGjlZcYBl1Sd5S00hqKYYEEnmPCeDzaUNDCyQ9CfoqQKiU35YckE0cXadS8LzgZI2/L0Z5r8oQ==
   dependencies:
-    "@cubejs-backend/shared" "^0.24.5"
+    "@cubejs-backend/shared" "^0.24.13"
     generic-pool "^3.7.1"
     ramda "^0.27.0"
     redis "^3.0.2"
 
-"@cubejs-backend/schema-compiler@^0.24.8":
-  version "0.24.8"
-  resolved "https://registry.yarnpkg.com/@cubejs-backend/schema-compiler/-/schema-compiler-0.24.8.tgz#9d8569d2f63532bd1f16b4816dea683768d74e68"
-  integrity sha512-rNybKz5TpmExuWFyafMn6x92J1YAopLf0Dr4PcMbzvQancciQV4/OFCrFif6SBSR3CNGWpSKaeBv+ciH6cawVw==
+"@cubejs-backend/schema-compiler@^0.24.15":
+  version "0.24.15"
+  resolved "https://registry.yarnpkg.com/@cubejs-backend/schema-compiler/-/schema-compiler-0.24.15.tgz#e0c5864a32e8748984f913705c29c55c3ce788e1"
+  integrity sha512-QmMi2+MC4itLeaEnstd/8HlKeQY+VVOBgk+5nQGFbFuDqKxBAmf5/KDDOVUDGHafaXZAUNug5KyUQoqtdZTeeg==
   dependencies:
     "@babel/core" "^7.4.0"
     "@babel/generator" "^7.4.0"
@@ -876,10 +876,10 @@
     ramda "^0.27.0"
     syntax-error "^1.3.0"
 
-"@cubejs-backend/shared@^0.24.5":
-  version "0.24.5"
-  resolved "https://registry.yarnpkg.com/@cubejs-backend/shared/-/shared-0.24.5.tgz#b9cb2d1741522d8d67ebd40d2306419a9bf3e85a"
-  integrity sha512-euyxWzgAPuT7mXDD5zFVw0vIT/yY3w1R7ithx8xY8rlFOf01YR2jiFgR09vrq0HacuDXa9WUxHTfxFl0UntWvQ==
+"@cubejs-backend/shared@^0.24.13":
+  version "0.24.13"
+  resolved "https://registry.yarnpkg.com/@cubejs-backend/shared/-/shared-0.24.13.tgz#65c8a1fcf974b673552faa3b09734a05c72bd8b3"
+  integrity sha512-u3U3DaDbRWapsROynKaVpNxN0nJiXjQPdF41xNUTksTOTLHbIu+U9nhHPGOZTxyeyclwVDRGjf9nzNTHJ3QKnQ==
   dependencies:
     env-var "^6.3.0"
     node-fetch "^2.6.1"
@@ -1381,6 +1381,11 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
+
+at-least-node@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
+  integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
 atob@^2.1.2:
   version "2.1.2"
@@ -2736,14 +2741,15 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
-  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+fs-extra@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz#910da0062437ba4c39fedd863f1675ccfefcb9fc"
+  integrity sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
   dependencies:
+    at-least-node "^1.0.0"
     graceful-fs "^4.2.0"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
+    jsonfile "^6.0.1"
+    universalify "^1.0.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -3848,10 +3854,12 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsonfile@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
-  integrity sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+jsonfile@^6.0.1:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
+  integrity sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==
+  dependencies:
+    universalify "^2.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -5836,10 +5844,15 @@ union-value@^1.0.0:
     is-extendable "^0.1.1"
     set-value "^2.0.1"
 
-universalify@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
-  integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+universalify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
+  integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
+
+universalify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-2.0.0.tgz#75a4984efedc4b08975c5aeb73f530d02df25717"
+  integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
 
 unpipe@1.0.0:
   version "1.0.0"
